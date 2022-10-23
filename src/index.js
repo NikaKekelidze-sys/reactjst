@@ -1,28 +1,30 @@
 import React from "react";
 import ReactDom from "react-dom";
+// CSS
+import "./index.css";
+// setup vars
+const author = "Amelia Hepworth";
+const title = "I Love You to the Moon and Back";
+const img =
+  "https://m.media-amazon.com/images/I/51p2SDOCV9L._SX482_BO1,204,203,200_.jpg";
 
 function BookList() {
   return (
-    <section>
-      <Book />
+    <section className="booklist">
+      <Book job="developer" />
+      <Book title="random title" number={22} />
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
   return (
-    <article>
-      <Image />
+    <article className="book">
+      <img src={img} alt="No Pic" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+      <p>{props.job}</p>
     </article>
-  );
-};
-
-const Image = () => {
-  return (
-    <img
-      src="https://m.media-amazon.com/images/I/51p2SDOCV9L._SX482_BO1,204,203,200_.jpg"
-      alt="No Pic"
-    />
   );
 };
 
