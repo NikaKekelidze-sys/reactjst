@@ -10,7 +10,7 @@ body{
     color: #222;
 }
 
-.booklist > article > img{
+.booklist img{
     width: 210px;
     height: 220px;
 }
