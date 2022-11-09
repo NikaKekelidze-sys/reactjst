@@ -2,44 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 // CSS
 import "./index.css";
-// // setup vars
-// const books = [
-//   {
-//     img: "https://m.media-amazon.com/images/I/51p2SDOCV9L._SX482_BO1,204,203,200_.jpg",
-//     title: "I Love You to the Moon and Back",
-//     author: "Amelia Hepworth",
-//   },
-
-//   {
-//     img: "https://play-lh.googleusercontent.com/_tslXR7zUXgzpiZI9t70ywHqWAxwMi8LLSfx8Ab4Mq4NUTHMjFNxVMwTM1G0Q-XNU80",
-//     title: "Siege",
-//     author: "Some Dude",
-//   },
-// ];
-// function BookList() {
-//   return (
-//     <section className="booklist">
-//       {books.map((book) => {
-//         const { img, title, author } = book;
-//         return <Book book={book}></Book>;
-//       })}
-//     </section>
-//   );
-// }
-
-// const Book = (props) => {
-//   const { img, title, author } = props.book;
-//   return (
-//     <article className="book">
-//       <img src={img} alt="No Pic" />
-//       <h1>{title}</h1>
-//       <h4>{author}</h4>
-//     </article>
-//   );
-// };
-
-// ReactDom.render(<BookList />, document.getElementById("root"));
-
+// Vars
 const books = [
   {
     img: "https://images-na.ssl-images-amazon.com/images/I/71PNGYHykrL._AC_UL600_SR600,400_.jpg",
@@ -63,26 +26,25 @@ const books = [
   },
 ];
 
-function BookList() {
+function BookRenderer() {
   return (
-    <section>
+    <section className="booklist">
       {books.map((book) => {
-        const { img, title, author } = book;
         return <Book book={book}></Book>;
       })}
     </section>
   );
 }
 
-const Book = (props) => {
-  const { img, title, author } = props.book;
+function Book(probs) {
+  const { img, title, author } = probs.book;
   return (
     <article>
-      <img src={img} alt="No Picture!" />
+      <img src={img} alt="" />
       <h1>{title}</h1>
       <h4>{author}</h4>
     </article>
   );
-};
+}
 
-ReactDom.render(<BookList />, document.getElementById("root"));
+ReactDom.render(<BookRenderer />, document.getElementById("root"));
